@@ -42,7 +42,7 @@ namespace KsiazkaWPF
             }
 
             SQLiteCommand com = con.CreateCommand();
-            com.CommandText = "SELECT ((COUNT(*)-1) / " + max_users + ") as pageSize FROM " + Table_name + where;
+            com.CommandText = "SELECT (COUNT(*) / " + max_users + ") FROM " + Table_name + where;
 
             SQLiteDataReader dataReader = com.ExecuteReader();
 
